@@ -21,7 +21,7 @@
                 @csrf
 
                 <div>
-                    <label>Nama Makanan</label>
+                    <label>Nama Menu</label>
                     <input style="color: black" type="text" name="nm_makanan" placeholder="Masukan Nama Makanan" required>
                 </div>
                 <div>
@@ -29,12 +29,12 @@
                     <input style="color: black" type="num" name="harga" placeholder="Harga" required>
                 </div>
                 <div>
-                    <label>Foto Makanan</label>
+                    <label>Foto Menu</label>
                     <input style="color: black" type="file" name="gb_makanan" required>
                 </div>
                 <div>
-                    <label>Deskripsi Makanan</label>
-                    <input style="color: black" type="text" name="deskripsi" placeholder="Masukan Deskripsi Makanan">
+                    <label>Deskripsi Menu</label>
+                    <input style="color: black" type="text" name="deskripsi" placeholder="Masukan Deskripsi Makanan" required>
                 </div>
 
                 <div>
@@ -43,13 +43,19 @@
 
 
 
-                <div>
-                <table bgcolor = "black">
-                       <tr>
-                           <th style="padding: 30px">Nama Makanan</th>
+
+
+
+            </form>
+
+            <div class="card">
+                <div class="card-body">
+                <table >
+                       <tr align="center">
+                           <th style="padding: 30px">Nama Menu</th>
                            <th style="padding: 30px">Harga</th>
                            <th style="padding: 30px">Deskripsi</th>
-                           <th style="padding: 30px">Foto Makanan</th>
+                           <th style="padding: 30px">Foto menu</th>
                            <th style="padding: 30px">Action</th>
                        </tr>
                        @foreach ($data as $data)
@@ -60,9 +66,15 @@
                         <td>{{$data->nm_makanan}}</td>
                         <td>{{$data->harga}}</td>
                         <td>{{$data->deskripsi}}</td>
-                        <td><img height="200" width="200" src="/FotoMakanan/{{$data->gb_makanan}}"></td>
+                        <td><img  src="/FotoMakanan/{{$data->gb_makanan}}" width="100px"></td>
 
-                        <td><a href="{{url('/deletemenu',$data->id)}}">Delete</a></td>
+                        <td>
+
+                            <a href="{{url('/deletemenu',$data->id)}} " class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                        <td>
+                            <a href="{{url('/updateview',$data->id)}} "class="btn btn-sm btn-warning mr-2"> Ubah</a>
+                        </td>
                        </tr>
                        @endforeach
                 </table>
@@ -70,15 +82,11 @@
 
 
                 </div>
-
-
-
-
-            </form>
-
-
+            </div>
+        </div>
 
         </div>
+
 
 
 

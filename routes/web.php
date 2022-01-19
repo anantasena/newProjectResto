@@ -29,6 +29,9 @@ Route::post('/uploadmakanan',[AdminController::class,"upload"]);
 
 Route::get('/deleteuser/{id}',[AdminController::class,"deleteuser"]);
 
+Route::get('/updateview/{id}',[AdminController::class,"updateview"]);
+
+Route::post('/updatemenu/{id}',[AdminController::class,"update"]);
 
 
 
