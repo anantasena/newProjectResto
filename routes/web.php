@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +15,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/home',[HomeController::class,"index"]);
+Route::get('/',[HomeController::class,"index"]);
+
+Route::get('/user',[AdminController::class,"user"]);
+
+Route::get('/menu',[AdminController::class,"menu"]);
+
+Route::post('/uploadmakanan',[AdminController::class,"upload"]);
+
+Route::get('/deleteuser/{id}',[AdminController::class,"deleteuser"]);
+
+
+
+
+
+
+
+Route::get('/redirects',[HomeController::class,"redirects"]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
