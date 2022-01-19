@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,"index"]);
 
+
 Route::get('/user',[AdminController::class,"user"]);
+
+Route::get('/deletemenu/{id}',[AdminController::class,"deletemenu"]);
 
 Route::get('/menu',[AdminController::class,"menu"]);
 

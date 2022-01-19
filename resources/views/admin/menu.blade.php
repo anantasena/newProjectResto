@@ -43,6 +43,35 @@
 
 
 
+                <div>
+                <table bgcolor = "black">
+                       <tr>
+                           <th style="padding: 30px">Nama Makanan</th>
+                           <th style="padding: 30px">Harga</th>
+                           <th style="padding: 30px">Deskripsi</th>
+                           <th style="padding: 30px">Foto Makanan</th>
+                           <th style="padding: 30px">Action</th>
+                       </tr>
+                       @foreach ($data as $data)
+
+
+                       <tr align="center">
+
+                        <td>{{$data->nm_makanan}}</td>
+                        <td>{{$data->harga}}</td>
+                        <td>{{$data->deskripsi}}</td>
+                        <td><img height="200" width="200" src="/FotoMakanan/{{$data->gb_makanan}}"></td>
+
+                        <td><a href="{{url('/deletemenu',$data->id)}}">Delete</a></td>
+                       </tr>
+                       @endforeach
+                </table>
+
+
+
+                </div>
+
+
 
 
             </form>
