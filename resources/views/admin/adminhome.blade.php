@@ -6,21 +6,12 @@
 <html lang="en">
   <head>
    @include('admin.admincss')
-
-
   </head>
   <body>
     <div class="container-scroller">
-
     @include('admin.navbar')
-
-
-
+    <h1>Hello World !</h1>
     </div>
-
-
-
-
    @include('admin.adminscript')
   </body>
 </html>
