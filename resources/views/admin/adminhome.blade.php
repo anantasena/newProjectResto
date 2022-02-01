@@ -5,6 +5,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <style>
+h1 {text-align: center;}
+
+
+
+      </style>
    @include('admin.admincss')
   </head>
   <body>
