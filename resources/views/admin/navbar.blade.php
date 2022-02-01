@@ -19,13 +19,23 @@
         </li>
 
         <li class="nav-item menu-items">
-          <a class="nav-link" href="{{url('/menu')}}">
-            <span class="menu-icon">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-icon">
               <i class="mdi mdi-playlist-play"></i>
             </span>
             <span class="menu-title">Menu</span>
+            <i class="menu-arrow"></i>
           </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="{{url('/menu')}}">Data Menu</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{url('/tambah')}}">Menu baru</a></li>
+            </ul>
         </li>
+
+
+
+
         <li class="nav-item menu-items">
           <a class="nav-link" href="pages/tables/basic-table.html">
             <span class="menu-icon">

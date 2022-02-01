@@ -37,6 +37,11 @@ class AdminController extends Controller
         return view('admin.menu',compact("data"));
     }
 
+    public function tambah(){
+
+        $data = makanan::all();
+        return view('admin.tambah',compact("data"));
+    }
     public function updateview($id){
 
         $data=Makanan::find($id);
